@@ -1,0 +1,537 @@
+<html>
+<head>
+<style>
+
+html {
+	font-size: 100%;
+	-webkit-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+}
+html, button, form, select, textarea {
+	font-family: sans-serif;
+	color: #222;
+}
+body {
+	font-family: Arial, Helvetica, sans-serif;
+	padding: 0px;
+	margin: 0px;
+	background-color: rgba(230, 230, 230, 0.85) !important;
+}
+
+#wrapper-sc * {
+	-webkit-box-sizing: border-box;
+	/* Needed for mobile WebKit */
+	-moz-box-sizing: border-box;
+	/* Needed for Firefox */
+	box-sizing: border-box;
+}
+
+#wrapper-sc .sc-validation-state\:invalid {
+	color: black;
+	background: #F05050;
+}
+#wrapper-sc .sc-validation-state\:valid {
+	outline: 2px solid #A9E2F3;
+	color: black;
+}
+#wrapper-sc .sc-validation-state\:default {
+	outline: 2px solid transparent;
+	color: black;
+}
+ #wrapper-sc .sc-validation-state\:invalid::-webkit-input-placeholder {
+ color: black;
+}
+ #wrapper-sc .sc-validation-state\:invalid:-moz-placeholder { /* Firefox 18- */
+ color: black;
+}
+ #wrapper-sc .sc-validation-state\:invalid::-moz-placeholder {  /* Firefox 19+ */
+ color: black;
+}
+ #wrapper-sc .sc-validation-state\:invalid:-ms-form-placeholder {
+ color: black;
+}
+#wrapper-sc .emailvalidation {
+	color: #E8C937;
+	text-align: center;
+	float: left;
+	padding: 0px 20px 8px 20px;
+	width: 100%;
+	font-weight: bold;
+}
+
+#wrapper-sc .group-sc:before, .group-sc:after {
+	display: table;
+	content: "";
+}
+#wrapper-sc .group-sc:after {
+	clear: both;
+}
+
+
+
+#wrapper-sc::-moz-selection {
+ background: #000000;
+ color: #fff;
+ text-shadow: none;
+}
+#wrapper-sc::selection {
+	background: #000000;
+	color: #fff;
+	text-shadow: none;
+}
+
+
+#wrapper-sc {
+	animation: animationFrames ease 1s;
+	animation-iteration-count: 1;
+	transform-origin: 50% 50%;
+	animation-fill-mode: forwards;
+	/*when the spec is finished*/
+	-webkit-animation: animationFrames ease 1s;
+	-webkit-animation-iteration-count: 1;
+	-webkit-transform-origin: 50% 50%;
+	-webkit-animation-fill-mode: forwards;
+	/*Chrome 16+, Safari 4+*/
+	-moz-animation: animationFrames ease 1s;
+	-moz-animation-iteration-count: 1;
+	-moz-transform-origin: 50% 50%;
+	-moz-animation-fill-mode: forwards;
+	/*FF 5+*/
+	-o-animation: animationFrames ease 1s;
+	-o-animation-iteration-count: 1;
+	-o-transform-origin: 50% 50%;
+	-o-animation-fill-mode: forwards;
+	/*Not implemented yet*/
+	-ms-animation: animationFrames ease 1s;
+	-ms-animation-iteration-count: 1;
+	-ms-transform-origin: 50% 50%;
+	-ms-animation-fill-mode: forwards;/*IE 10+*/
+}
+ @keyframes animationFrames {
+ 0% {
+ opacity: 0;
+ transform: translate(0px, -25px);
+}
+ 100% {
+ opacity: 1;
+ transform: translate(0px, 0px);
+}
+}
+ @-moz-keyframes animationFrames {
+ 0% {
+ opacity: 0;
+ -moz-transform: translate(0px, -25px);
+}
+ 100% {
+ opacity: 1;
+ -moz-transform: translate(0px, 0px);
+}
+}
+ @-webkit-keyframes animationFrames {
+ 0% {
+ opacity: 0;
+ -webkit-transform: translate(0px, -25px);
+}
+ 100% {
+ opacity: 1;
+ -webkit-transform: translate(0px, 0px);
+}
+}
+ @-o-keyframes animationFrames {
+ 0% {
+ opacity: 0;
+ -o-transform: translate(0px, -25px);
+}
+ 100% {
+ opacity: 1;
+ -o-transform: translate(0px, 0px);
+}
+}
+ @-ms-keyframes animationFrames {
+ 0% {
+ opacity: 0;
+ -ms-transform: translate(0px, -25px);
+}
+ 100% {
+ opacity: 1;
+ -ms-transform: translate(0px, 0px);
+}
+}
+
+#wrapper-sc p, #wrapper-sc a, #wrapper-sc h1, #wrapper-sc h2, #wrapper-sc h3, #wrapper-sc h4, #wrapper-sc ul, #wrapper-sc ol, #wrapper-sc dd, #wrapper-sc nav ul, #wrapper-sc nav ol {
+	font-family: sans-serif;
+}
+#wrapper-sc p {
+	margin: 0px;
+	padding: 0px;
+	font-size: 12px;
+	line-height: 15px;
+}
+#wrapper-sc a {
+	margin: 0px;
+	padding: 0px;
+	font-size: 12px;
+	line-height: 15px;
+	text-decoration: none;
+	color: #FFFFFF;
+}
+#wrapper-sc h1 {
+	font-family: 'Avenir_Reg', arial, sans-serif;
+	margin: 0px;
+	padding: 0px;
+	font-size: 32px;
+	line-height: 35px;
+	text-align: center;
+	font-weight: lighter;
+	color:#0d0e0e;
+}
+#wrapper-sc h2 {
+	font-family: 'Avenir_Reg', arial, sans-serif;
+	margin: 15px 0px 0px 0px;
+	padding: 0px;
+	font-size: 16px;
+	line-height: 20px;
+	text-align: center;
+	font-weight: lighter;
+	color: #333333;
+}
+#wrapper-sc h3 {
+	font-family: 'Avenir_Reg', arial, sans-serif;
+	margin: 0px;
+	padding: 0px;
+	font-size: 12px;
+	line-height: 16px;
+	text-align: center;
+	font-weight: lighter;
+	color: #afafaf;
+}
+#wrapper-sc h4 {
+	margin: 0px;
+	padding: 0px;
+	font-size: 14px;
+	line-height: 18px;
+}
+#wrapper-sc h6 {
+	margin: 0px;
+	padding: 0px;
+	font-size: 10px;
+	line-height: 12px;
+	color: #FFFFFF;
+	font-weight: lighter;
+	text-align: justify;
+}
+#wrapper-sc ul, #wrapper-sc ol {
+	margin: 0 0;
+	padding: 0 0 0 0;
+}
+#wrapper-sc dd {
+	margin: 0 0 0 0;
+}
+#wrapper-sc nav ul, #wrapper-sc nav ol {
+	margin: 0;
+	padding: 0;
+}
+/*This stops the initial white background issue and set the padding above the OSR*/
+
+.osr-content {
+	background-color: transparent !important;
+	top: 15% !important;
+	width: 320px;/* this needs to match the wrapper-sc width */
+}
+
+
+
+
+
+.osr-overlay {
+  background-color: rgba(230, 230, 230, 0.85);
+}
+
+
+
+
+#wrapper-sc input:focus::-webkit-input-placeholder {
+ color: transparent;
+ border-radius: 400px 400px 400px 400px;
+ color: #d2d2d2;
+}
+ #wrapper-sc input:focus:-moz-placeholder {
+ color: transparent;
+ -moz-border-radius: 400px 400px 400px 400px;
+ color: #d2d2d2;
+}
+
+
+/* FF 4-18 */
+
+#wrapper-sc input:focus::-moz-placeholder {
+ color: transparent;
+ -moz-border-radius: 400px 400px 400px 400px;
+ color: #d2d2d2;
+}
+
+
+/* FF 19+ */
+
+#wrapper-sc input:focus:-ms-input-placeholder {
+ color: transparent;
+ -ms-border-radius: 400px 400px 400px 400px;
+}
+/* IE 10+ */
+
+
+
+
+@font-face {
+	font-family: 'Avenir_Reg';
+	font-style: normal;
+	font-weight: lighter;
+	src: url('https://cdn-salecycle.s3.amazonaws.com/images/fontlibrary/AvenirNextRegular.eot');
+	src: url('https://cdn-salecycle.s3.amazonaws.com/images/fontlibrary/AvenirNextRegular.eot') format('embedded-opentype'),  url('https://cdn-salecycle.s3.amazonaws.com/images/fontlibrary/AvenirNextRegular.woff2') format('woff2'),  url('https://cdn-salecycle.s3.amazonaws.com/images/fontlibrary/AvenirNextRegular.woff') format('woff'),  url('https://cdn-salecycle.s3.amazonaws.com/images/fontlibrary/AvenirNextRegular.ttf') format('truetype'),  url('https://cdn-salecycle.s3.amazonaws.com/images/fontlibrary/AvenirNextRegular.svg') format('svg');
+}
+@font-face {
+	font-family: 'Avenir_Bold';
+	font-style: normal;
+	font-weight: normal;
+	src: url('https://cdn-salecycle.s3.amazonaws.com/images/fontlibrary/AvenirNextLTProDemi.eot');
+	src: url('https://cdn-salecycle.s3.amazonaws.com/images/fontlibrary/AvenirNextLTProDemi.eot') format('embedded-opentype'),  url('https://cdn-salecycle.s3.amazonaws.com/images/fontlibrary/AvenirNextLTProDemi.woff2') format('woff2'),  url('https://cdn-salecycle.s3.amazonaws.com/images/fontlibrary/AvenirNextLTProDemi.woff') format('woff'),  url('https://cdn-salecycle.s3.amazonaws.com/images/fontlibrary/AvenirNextLTProDemi.ttf') format('truetype'),  url('https://cdn-salecycle.s3.amazonaws.com/images/fontlibrary/AvenirNextLTProDemi.svg') format('svg');
+}
+#wrapper-sc {
+	position: relative;
+	font-family: sans-serif;
+	display: block;
+	width: 460px;
+	box-sizing: border-box;
+	position: relative;
+  margin: 10px auto 0px auto;  
+}
+#wrapper-sc .content-sc {
+	padding: 100px 40px 0px 40px;
+}
+#wrapper-sc .contentback-sc {
+	padding: 120px 40px 0px 40px;
+}
+
+#wrapper-sc .nothanks-sc {
+	margin-top: 0px;
+	padding: 0px 20px 20px 20px;
+	position:absolute;
+	bottom:-5px;
+	display:block;
+}
+
+
+#wrapper-sc .front-sc, #wrapper-sc .back-sc {
+	width: 460px;
+	height: 390px;
+	padding: 0px;
+	margin-top: 50px;
+	border-radius: 10px 10px 10px 10px;
+	-moz-border-radius: 10px 10px 10px 10px;
+	-webkit-border-radius: 10px 10px 10px 10px;
+}
+/* Needs to match wrapper-sc width*/
+
+#wrapper-sc .front-sc, #wrapper-sc .back-sc {
+	-webkit-backface-visibility: hidden;
+	-moz-backface-visibility: hidden;
+	-ms-backface-visibility: hidden;
+	backface-visibility: hidden;
+	-webkit-transition: .6s;
+	-webkit-transform-style: preserve-3d;
+	-moz-transition: .6s;
+	-moz-transform-style: preserve-3d;
+	-o-transition: .6s;
+	-o-transform-style: preserve-3d;
+	-ms-transition: .6s;
+	-ms-transform-style: preserve-3d;
+	transition: .6s;
+	transform-style: preserve-3d;
+	position: absolute;
+	top: 0;
+	left: 0;
+}
+
+
+.front-flip {
+	-webkit-transform: rotateY(0deg);
+	-moz-transform: rotateY(0deg);
+	-o-transform: rotateY(0deg);
+	-ms-transform: rotateY(0deg);
+	transform: rotateY(0deg);
+}
+#wrapper-sc .front-sc {
+	z-index: 2;
+	width: 460px;
+	height: 390px;
+	background-color: #ffffff;
+	background-position: top;
+	background-repeat: no-repeat;
+	margin-top: 50px;
+}
+#wrapper-sc .icon-sc {
+	height: 104px;
+	width: 174px;
+	position: absolute;
+	top: -45px;
+	left: -117px;
+	right: 0;
+	margin-left: auto;
+	margin-right: auto;
+}
+#wrapper-sc input {
+	width: 300px;
+	border: 2px solid #52caef;
+	height: 44px;
+	background-color: #fff;
+	padding: 0px 0px 0px 10px;
+	margin: 0px auto;
+	font-size: 14px;
+	font-family: Arial, sans-serif;
+	font-weight: lighter;
+	color: #303030;
+	display: block;
+	vertical-align: middle;
+	outline: none!important;
+	box-shadow: none!important;
+	-webkit-border-radius: 400px 400px 400px 400px!important;
+	-moz-border-radius: 400px 400px 400px 400px!important;
+	border-radius: 400px 400px 400px 400px!important;
+	box-sizing: border-box!important;
+	text-align: center;
+}
+ #wrapper-sc input:required {
+ box-shadow:none!important;
+ outline: none!important;
+-webkit-border-radius: 400px 400px 400px 400px!important;
+ -moz-border-radius: 400px 400px 400px 400px!important;
+ border-radius: 400px 400px 400px 400px!important;
+ box-sizing: border-box!important;
+}
+ #wrapper-sc input:invalid {
+ box-shadow:none!important;
+ outline: none!important;
+ -webkit-border-radius: 400px 400px 400px 400px!important;
+ -moz-border-radius: 400px 400px 400px 400px!important;
+ border-radius: 400px 400px 400px 400px!important;
+ box-sizing: border-box!important;
+}
+#wrapper-sc .emailbox-sc {
+	display: block;
+	padding-top: 15px;
+	padding-bottom: 15px;
+}
+#wrapper-sc .btn-sc {
+	display: block;
+	margin: 10px auto 0px auto;
+	background-color: #d50f67;
+	text-align: center;
+	font-size: 18px;
+	color: #FFFFFF;
+	font-family: 'Avenir_Bold', arial, sans-serif;
+	font-weight: bold;
+	font-style: bold;
+	height: 40px;
+	line-height: 36px;
+	width: 200px;
+	transition: all .2s ease-in-out;
+	-webkit-border-radius: 400px 400px 400px 400px!important;
+	-moz-border-radius: 400px 400px 400px 400px!important;
+	border-radius: 400px 400px 400px 400px!important;
+}
+#wrapper-sc .btn-sc:hover {
+	background-color: #B00752;
+}
+
+
+@media screen and (max-width: 480px) {
+/* Responsive Styling below this line - change the width above depending on OSR Width */
+.osr-content {
+	width: 100%!important;
+}
+#wrapper-sc {
+	width: 100%;
+}
+#wrapper-sc .exit-sc {
+	top: 10px !important;
+	right: 0px !important;
+}
+#wrapper-sc h1 {
+	font-family: 'Avenir_Reg', arial, sans-serif;
+	margin: 0px;
+	padding: 0px;
+	font-size: 22px;
+	line-height: 25px;
+	text-align: center;
+	font-weight: lighter;
+}
+#wrapper-sc h2 {
+	font-family: 'Avenir_Reg', arial, sans-serif;
+	margin: 0px !important;
+	padding: 0px !important;
+	font-size: 12px;
+	line-height: 16px;
+	text-align: center;
+	font-weight: lighter;
+	color: #afafaf;
+}
+#wrapper-sc .vanish {
+	display: none;
+}
+
+
+
+#wrapper-sc .front-sc {
+	width: 100%;
+	height: 320px;
+}
+#wrapper-sc .content-sc {
+	padding-top: 100px;
+}
+#wrapper-sc input {
+	width: 90%;
+	border: 1px solid #52caef;
+}
+#wrapper-sc .btn-sc {
+	width: 90% !important;
+}
+#wrapper-sc .nothanks-sc {
+	margin-top: 0px;
+	padding: 0px 20px 20px 20px;
+	position:absolute;
+	bottom:-5px;
+	display:block;
+}
+
+}
+</style>
+
+</head>
+<body>
+
+<div style="display:none !important;"> </div>
+<div id="wrapper-sc"> 
+  
+  
+  <div class="front-sc front-flip"> <a class="exit-sc close-sc" href="javascript:void(0);">×</a>
+    <div class="icon-sc"> <img src="https://dewey.tailorbrands.com/production/brand_version_mockup_image/458/4209143458_30819f9a-39c7-48ca-a1ba-e5b6de2f70e7.png?cb=1606667023"/> </div>
+    <div class="content-sc">
+      <h1> <span class="vanish"> </br> Expected number of coronavirus cases in _____ county: </br> </br> 1 month from now: </br> 3 months from now: </h1>
+    </div>
+    <div class="emailContainer-sc" id="emailContainer-sc">
+      <div class="emailbox-sc">
+        <div class="emailboxelement-sc">
+          <!--<form> <input class="county-field-sc emb-sc" type="county" placeholder="enter your county here" > </form> 
+        </div>
+        <a class="send-sc btn-sc" href="javascript:void(0);">Submit</a> </div> -->
+    </div>
+    <div class="nothanks-sc">
+      <h3> <em></em></h3>
+    </div>
+  </div>
+ 
+  
+</div>
+
+</body>
+</html>
